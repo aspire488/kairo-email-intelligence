@@ -1,5 +1,5 @@
 {
-  "name": "react-example",
+  "name": "kairo-email-intelligence",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -43,5 +43,7 @@
     "tsx": "^4.21.0",
     "typescript": "^7.0.2",
     "@types/express": "^4.17.21"
-  }
+  },
+  "description": "Personal email intelligence and operations agent",
+  "license": "MIT"
 }
