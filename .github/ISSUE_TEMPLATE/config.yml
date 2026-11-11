@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and ideas
+    url: https://github.com/aspire488/kairo-email-intelligence/discussions
+    about: Ask questions and discuss ideas here.
+  - name: Security vulnerability
+    url: https://github.com/aspire488/kairo-email-intelligence/security
+    about: Report vulnerabilities privately. Do not open a public issue.
