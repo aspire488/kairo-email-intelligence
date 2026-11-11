@@ -1,0 +1,6 @@
+{
+  "name": "KAIRO - Personal Email Intelligence & Operations Agent",
+  "description": "Autonomous, intelligent email operations agent for Gmail: prioritizing communications, tracking open-source PRs, silencing inbox noise, and generating actionable daily briefings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

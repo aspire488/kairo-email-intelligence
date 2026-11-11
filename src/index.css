@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* THE ARCHIVE - Light Theme (PRIMARY) */
+    --color-canvas: #F3EFE6;
+    --color-surface-main: #FBF9F4;
+    --color-surface-secondary: #E9E4D9;
+    --color-surface-elevated: #FFFFFF;
+    --color-surface-hover: #ECE7DC;
+    --color-text-primary: #20251F;
+    --color-text-secondary: #6F746B;
+    --color-text-tertiary: #9A9E96;
+    --color-border: #D9D2C5;
+    --color-border-hover: #C5BCAD;
+    --color-forest: #263B31;
+    --color-oxide: #B4513D;
+    --color-brass: #C39A58;
+    --color-success: #52765C;
+    --color-warning: #A87936;
+    --color-error: #B7473E;
+  }
+
+  :root.dark, html.dark {
+    /* THE ARCHIVE - Dark Theme */
+    --color-canvas: #20231F;
+    --color-surface-main: #292D27;
+    --color-surface-secondary: #31362F;
+    --color-surface-elevated: #373D35;
+    --color-surface-hover: #363B32;
+    --color-text-primary: #F3EFE6;
+    --color-text-secondary: #B5B6A9;
+    --color-text-tertiary: #84877B;
+    --color-border: #3A4038;
+    --color-border-hover: #4B5348;
+    --color-forest: #91B09A;
+    --color-oxide: #D9826F;
+    --color-brass: #D0AD70;
+    --color-success: #76A382;
+    --color-warning: #D0AD70;
+    --color-error: #E06C62;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Editorial typography classes */
+  .font-editorial {
+    font-family: 'Newsreader', 'Instrument Serif', Georgia, serif;
+  }
+
+  .font-display {
+    font-family: 'Instrument Serif', 'Newsreader', Georgia, serif;
+  }
+
+  .font-mono-tech {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+    font-feature-settings: "tnum" 1;
+  }
+}
+
+/* Subtle, restrained archival scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}

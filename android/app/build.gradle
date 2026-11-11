@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace "ai.kairo.app"
+    compileSdk 34
+    defaultConfig {
+        applicationId "ai.kairo.app"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+             ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file("keystore/release.keystore")
+            storePassword System.getenv("KAIRO_KEYSTORE_PASSWORD") ?: "kairo_secure_release_2026"
+            keyAlias System.getenv("KAIRO_KEY_ALIAS") ?: "kairo"
+            keyPassword System.getenv("KAIRO_KEY_PASSWORD") ?: "kairo_secure_release_2026"
+        }
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.2.0"
+    implementation "androidx.core:core-splashscreen:1.0.1"
+    implementation "androidx.biometric:biometric:1.2.0-alpha05"
+}
