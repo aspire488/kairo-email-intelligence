@@ -6,7 +6,33 @@ import {
   onAuthStateChanged,
   User,
 } from 'firebase/auth';
-import firebaseConfig from '../../firebase-applet-config.json';
+
+// Firebase browser configuration is injected at build time instead of committed
+// as a live project config. These values are public client identifiers, not
+// server secrets; restrict the API key to Firebase APIs and approved origins.
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+};
+
+const requiredFirebaseConfig: Array<keyof typeof firebaseConfig> = [
+  'apiKey',
+  'authDomain',
+  'projectId',
+  'appId',
+];
+
+const missingFirebaseConfig = requiredFirebaseConfig.filter((key) => !firebaseConfig[key]);
+if (missingFirebaseConfig.length > 0) {
+  throw new Error(
+    `Missing Firebase configuration: ${missingFirebaseConfig.join(', ')}. Set the VITE_FIREBASE_* variables before building.`
+  );
+}
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
@@ -32,7 +58,7 @@ export const initAuth = (
       if (cachedAccessToken) {
         if (onAuthSuccess) onAuthSuccess(user, cachedAccessToken);
       } else {
-        // Attempt recovery from server-side in-memory session bridge using verified Firebase ID token
+        // Attempt recovery from server-side session bridge using verified Firebase ID token
         try {
           const idToken = await user.getIdToken();
           const res = await fetch('/api/auth/session', {
@@ -85,9 +111,7 @@ export const googleSignIn = async (): Promise<{ user: User; accessToken: string 
           'Content-Type': 'application/json',
           Authorization: `Bearer ${idToken}`,
         },
-        body: JSON.stringify({
-          accessToken: cachedAccessToken,
-        }),
+        body: JSON.stringify({ accessToken: cachedAccessToken }),
       });
     } catch (e) {
       console.warn('Server session registration failed:', e);
@@ -102,9 +126,7 @@ export const googleSignIn = async (): Promise<{ user: User; accessToken: string 
   }
 };
 
-export const getAccessToken = async (): Promise<string | null> => {
-  return cachedAccessToken;
-};
+export const getAccessToken = async (): Promise<string | null> => cachedAccessToken;
 
 export const logout = async () => {
   try {
