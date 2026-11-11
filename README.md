@@ -8,13 +8,15 @@ Turn inbox noise into a clear picture of what needs your attention.
 
 <p>
 <img src="https://img.shields.io/badge/status-in%20development-E65038?style=flat-square&labelColor=20222B" alt="In development"/>
+<img src="https://img.shields.io/github/license/aspire488/kairo-email-intelligence?style=flat-square&color=E65038&labelColor=20222B" alt="MIT License"/>
+<img src="https://img.shields.io/github/last-commit/aspire488/kairo-email-intelligence?style=flat-square&color=526A99&labelColor=20222B" alt="Last commit"/>
 <img src="https://img.shields.io/badge/Gmail-integration-20222B?style=flat-square&logo=gmail&logoColor=F5F0E8" alt="Gmail"/>
 <img src="https://img.shields.io/badge/Gemini-powered-20222B?style=flat-square&logo=googlegemini&logoColor=F5F0E8" alt="Gemini"/>
 <img src="https://img.shields.io/badge/React-20222B?style=flat-square&logo=react&logoColor=F5F0E8" alt="React"/>
 <img src="https://img.shields.io/badge/TypeScript-20222B?style=flat-square&logo=typescript&logoColor=F5F0E8" alt="TypeScript"/>
 </p>
 
-<a href="#why-kairo">Why KAIRO</a> · <a href="#capabilities">Capabilities</a> · <a href="#architecture">Architecture</a> · <a href="#security">Security</a> · <a href="#status">Status</a>
+<a href="#why-kairo">Why KAIRO</a> · <a href="#capabilities">Capabilities</a> · <a href="#architecture">Architecture</a> · <a href="#security">Security</a> · <a href="#contributing">Contributing</a> · <a href="#license">License</a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=E65038&height=3&section=header" width="100%" alt=""/>
 
 </div>
@@ -208,7 +210,19 @@ npm run lint
 
 ## Contributing
 
-Issues and focused pull requests are welcome. Keep changes small, typed, testable, and explicit about what has actually been verified. Never include real inbox data, access tokens, API keys, or credentials in commits, screenshots, fixtures, or issue reports.
+Contributions are welcome. Start with the [contribution guide](CONTRIBUTING.md), check the [open issues](https://github.com/aspire488/kairo-email-intelligence/issues), and use the repository's issue and pull request templates.
+
+- [Contributing guide](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security policy](SECURITY.md)
+- [Support](SUPPORT.md)
+- [Changelog](CHANGELOG.md)
+
+Keep changes focused, typed, testable, and explicit about what has actually been verified. Never include real inbox data, access tokens, API keys, or credentials in commits, screenshots, fixtures, or issue reports.
+
+## License
+
+KAIRO is released under the [MIT License](LICENSE). You may use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software, subject to the license terms.
 
 <div align="center">
 
