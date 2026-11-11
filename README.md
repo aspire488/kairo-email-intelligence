@@ -1,7 +1,7 @@
 <!-- KAIRO · Paper #F5F0E8 · Ink #20222B · Vermilion #E65038 -->
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=700&size=42&duration=3200&pause=900&color=20222B&center=true&vCenter=true&width=820&height=72&lines=KAIRO;Know+what+matters." alt="KAIRO — Know what matters."/>
+<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=700&size=42&duration=3200&pause=900&color=F5F0E8&center=true&vCenter=true&width=820&height=72&lines=KAIRO;Know+what+matters." alt="KAIRO — Know what matters."/>
 
 <strong>PERSONAL EMAIL INTELLIGENCE</strong><br/>
 Turn inbox noise into a clear picture of what needs your attention.
@@ -226,7 +226,7 @@ KAIRO is released under the [MIT License](LICENSE). You may use, copy, modify, m
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=20222B&height=2&section=footer" width="100%" alt=""/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=F5F0E8&height=2&section=footer" width="100%" alt=""/>
 
 ### Your inbox has information. KAIRO finds what matters.
 
