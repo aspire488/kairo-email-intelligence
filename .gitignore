@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Capacitor-synced web build (contains bundled client config)
+android/app/src/main/assets/public/
